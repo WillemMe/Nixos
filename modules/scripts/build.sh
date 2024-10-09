@@ -1,3 +1,4 @@
+#nix shell zsh
 # Rebuild system
 echo -n "Rebuilding NixOS... "
 echo -ne "\033[?1049h\033[H" # enter alt-buff and clear
@@ -5,7 +6,7 @@ echo "Rebuilding NixOS..."
 
 set +o pipefail # Disable pipafail since we check ourselves
 # shellcheck disable=SC2024 #ah the irony
-sudo nixos-rebuild switch --show-trace --flake ".#${HOST_SHELL}" 2>&1 | tee .nixos-switch.log
+sudo nixos-rebuild switch --show-trace --flake $NIXOS_CONFIG_DIR 2>&1 | tee .nixos-switch.log
 exit_code="${PIPESTATUS[0]}"
 set -o pipefail # Re-enable pipefail
 
