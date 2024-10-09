@@ -1,0 +1,10 @@
+(defwidget launcher []
+  (box
+    :class "launcher_module"
+    :orientation "h"
+    (button
+      :onclick "rofi -show drun &"
+      (image
+        :class "launcher-icon"
+        :path "assets/rocket.png"
+       :image-width 28))))

@@ -1,0 +1,72 @@
+(include "./modules/bluetooth.yuck")
+(include "./modules/bright.yuck")
+(include "./modules/clock.yuck")
+(include "./modules/music.yuck")
+(include "./modules/net.yuck")
+(include "./modules/sys.yuck")
+(include "./modules/variables.yuck")
+(include "./modules/volume.yuck")
+(include "./modules/workspaces.yuck")
+(include "./modules/launcher.yuck")
+
+(include "./windows/calendar.yuck")
+(include "./windows/music.yuck")
+(include "./windows/osd.yuck")
+(include "./windows/system-menu.yuck")
+
+
+(defwidget left []
+  (box
+    :space-evenly false
+    :halign "start"
+    (launcher)
+    (workspaces)))
+
+(defwidget right []
+  (box
+    :space-evenly false
+    :halign "end"
+    (bright)
+    (volume-module)
+    (bluetooth)
+    (systray :class "tray" :pack-direction "rtl" :icon-size "20")
+
+    (label :class "seperator" :text "|")
+    (sys)
+    (label :class "seperator" :text "|")
+    (clock_module)))
+
+(defwidget center []
+  (box
+    :space-evenly false
+    :halign "center"
+    (music-module)))
+
+(defwidget bar []
+  (centerbox
+    :class "bar"
+    (left)
+    (center)
+    (right)))
+
+(defwindow bar_laptop
+    :monitor 0
+    :geometry (geometry :x "0%"
+               :y "0px"
+               :width "100%"
+               :height "36px"
+               :anchor "top center")
+    :stacking "bottom"
+    :exclusive true
+  (bar))
+
+(defwindow bar_external
+    :monitor 1
+    :geometry (geometry :x "0%"
+               :y "0%"
+               :width "100%"
+               :height "36px"
+               :anchor "top center")
+    :stacking "bottom"
+    :exclusive true
+  (bar))
