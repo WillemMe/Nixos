@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+LC_ALL=en_US.UTF-8
 ## This script is a template script for creating textual file previews in Joshuto.
 ##
 ## Copy this script to your Joshuto configuration directory and refer to this

@@ -6,7 +6,7 @@ let cfg =
     screen = pkgs.writeShellScriptBin "screen" ''${builtins.readFile ./screen}'';
     bandw = pkgs.writeShellScriptBin "bandw" ''${builtins.readFile ./bandw}'';
     maintenance = pkgs.writeShellScriptBin "maintenance" ''${builtins.readFile ./maintenance}'';
-
+    rofi-power-menu = pkgs.writeShellScriptBin "rofi-power-menu" ''${builtins.readFile ./rofi-power-menu}'';
 in {
     options.modules.packages = { enable = mkEnableOption "packages"; };
     config = mkIf cfg.enable {
@@ -20,7 +20,15 @@ in {
             git python3 lua zig 
             mpv pqiv
             screen bandw maintenance
-            wf-recorder anki-bin 
+            wf-recorder anki-bin
+            #Applications
+            obsidian discord virt-manager
+            thunderbird nextcloud-client spotify
+            wireshark burpsuite rustdesk
+            #Libreoffice
+            libreoffice hunspell
+            hunspellDicts.nl_nl hunspellDicts.en_US
+
         ];
     };
 }

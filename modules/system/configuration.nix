@@ -4,6 +4,7 @@
     # Remove unecessary preinstalled packages
     environment.defaultPackages = [ ];
     services.xserver.desktopManager.xterm.enable = false;
+    nixpkgs.config.allowUnfree = true;
 
     programs = {
       zsh.enable = true;

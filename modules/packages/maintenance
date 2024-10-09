@@ -5,4 +5,3 @@ cd $NIXOS_CONFIG_DIR
 nix flake update
 sudo nixos-rebuild switch --flake . --upgrade
 nix run nixpkgs#bleachbit
-nix run nixpkgs#pcmanfm

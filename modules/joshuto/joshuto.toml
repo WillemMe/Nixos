@@ -39,10 +39,10 @@ reverse = false
 
 [preview]
 preview_protocol = "kitty"
-max_preview_size = 2097152                           # 2MB
+max_preview_size = 5097152                           # 2MB
 preview_script = "~/.config/joshuto/preview_file.sh" # make sure it's marked as executable
-preview_shown_hook_script = "~/.config/joshuto/on_preview_shown.sh"
-preview_removed_hook_script = "~/.config/joshuto/on_preview_removed.sh"
+#preview_shown_hook_script = "~/.config/joshuto/on_preview_shown.sh"
+#preview_removed_hook_script = "~/.config/joshuto/on_preview_removed.sh"
 [search]
 # insensitive, sensitive, smart
 string_case_sensitivity = "insensitive"
