@@ -30,18 +30,16 @@ in {
             shellAliases = {
                 v = "nvim -i NONE";
                 nvim = "nvim -i NONE";
+                vim = "nvim -i NONE";
             };
         };
 
         programs.neovim = {
             enable = true;
+            catppuccin.enable = true;
             plugins = with pkgs.vimPlugins; [ 
                 vim-nix
                 plenary-nvim
-                {
-                    plugin = zk-nvim;
-                    config = "require('zk').setup()";
-                }
                 {
                     plugin = jabuti-nvim;
                     config = "colorscheme jabuti";
@@ -57,11 +55,7 @@ in {
                 {
                     plugin = telescope-nvim;
                     config = "lua require('telescope').setup()";
-                }
-                {
-                    plugin = indent-blankline-nvim;
-                    config = "lua require('indent_blankline').setup()";
-                }
+                } 
                 {
                     plugin = nvim-lspconfig;
                     config = ''

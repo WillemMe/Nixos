@@ -11,6 +11,12 @@ in {
         joshuto
       ];
 
+      programs.zsh = {
+        shellAliases = {
+          jo = "joshuto";
+        };
+      };
+
       # Managing individual files using relative paths (relative to the Nix file)
       home.file.".config/joshuto/bookmarks.toml".source = ./bookmarks.toml;
       home.file.".config/joshuto/icons.toml".source = ./icons.toml;

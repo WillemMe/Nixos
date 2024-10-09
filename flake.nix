@@ -4,7 +4,7 @@
     # All inputs for the system
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
+        catppuccin.url = "github:catppuccin/nix";
         home-manager = {
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -13,7 +13,7 @@
     };
 
     # All outputs for the system (configs)
-    outputs = { home-manager, nixpkgs,  ... }@inputs: 
+    outputs = { home-manager, catppuccin,nixpkgs,  ... }@inputs: 
         let
             system = "x86_64-linux"; #current system
             pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
@@ -32,6 +32,10 @@
                         # Hardware config (bootloader, kernel modules, filesystems, etc)
                         # DO NOT USE MY HARDWARE CONFIG!! USE YOUR OWN!!
                         (./. + "/hosts/${hostname}/hardware-configuration.nix")
+
+                        ## Theme
+                        catppuccin.nixosModules.catppuccin
+
                         home-manager.nixosModules.home-manager
                         {
                             home-manager = {
@@ -40,7 +44,13 @@
                                 backupFileExtension = "backup";
                                 extraSpecialArgs = { inherit inputs; };
                                 # Home manager config (configures programs like firefox, zsh, eww, etc)
-                                users.willem = (./. + "/hosts/${hostname}/user.nix");
+                                users.willem = {
+                                  imports = [
+                                    (./. + "/hosts/${hostname}/user.nix")
+                                    catppuccin.homeManagerModules.catppuccin
+                                  ];
+                                };
+                                
                             };
                             #nixpkgs.overlays = [
                             #    # Add nur overlay for Firefox addons

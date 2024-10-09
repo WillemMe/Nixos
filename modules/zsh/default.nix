@@ -1,13 +1,18 @@
 { pkgs, lib, config, ... }:
 with lib;
-let cfg = config.modules.zsh;
+let 
+  cfg = config.modules.zsh;
+ 
 in {
     options.modules.zsh = { enable = mkEnableOption "zsh"; };
 
     config = mkIf cfg.enable {
     	home.packages = [
 	    pkgs.zsh
-	];
+          ];
+                  
+        
+
 
         programs.zsh = {
             enable = true;
@@ -62,8 +67,6 @@ in {
                 nd = "nix develop -c $SHELL";
                 rebuild = "sudo nixos-rebuild switch --flake $NIXOS_CONFIG_DIR --fast; notify-send 'Rebuild complete\!'";
                 #Programs
-                vim = "nvim";
-                jo = "joshuto";
               };
 
             # Source all plugins, nix-style
