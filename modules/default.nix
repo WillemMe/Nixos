@@ -18,6 +18,7 @@
         ./git
         ./gpg
         ./direnv
+        ./joshuto
 
         # system
         ./xdg

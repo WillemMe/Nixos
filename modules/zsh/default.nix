@@ -43,8 +43,8 @@ in {
 
             # Tweak settings for history
             history = {
-                save = 1000;
-                size = 1000;
+                save = 10000;
+                size = 10000;
                 path = "$HOME/.cache/zsh_history";
             };
 
@@ -53,15 +53,18 @@ in {
                 c = "clear";
                 mkdir = "mkdir -vp";
                 rm = "rm -rifv";
-                vim = "nvim";
                 mv = "mv -iv";
                 cp = "cp -riv";
                 cat = "bat --paging=never --style=plain";
                 ls = "exa -a --icons";
                 tree = "exa --tree --icons";
+                #Devops
                 nd = "nix develop -c $SHELL";
                 rebuild = "sudo nixos-rebuild switch --flake $NIXOS_CONFIG_DIR --fast; notify-send 'Rebuild complete\!'";
-            };
+                #Programs
+                vim = "nvim";
+                jo = "joshuto";
+              };
 
             # Source all plugins, nix-style
             plugins = [

@@ -18,6 +18,7 @@
         git.enable = true;
         gpg.enable = false;
         direnv.enable = true;
+        joshuto.enable = true;
 
         # system
         xdg.enable = true;
