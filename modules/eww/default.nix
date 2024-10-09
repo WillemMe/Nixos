@@ -13,7 +13,10 @@ in {
    # Declare this as a Home Manager module
    home.packages = with pkgs; [
      # Add eww and any other dependencies here
-     eww upower jaq ripgrep bluez bc networkmanager pulseaudio wireplumber
+     eww upower socat
+     jaq ripgrep bluez
+     bc networkmanager pulseaudio
+     wireplumber material-symbols
    ];
 
    # Managing individual files
