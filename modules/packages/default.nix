@@ -14,7 +14,7 @@ in {
             grim slurp slop
             imagemagick age libnotify
             git python3 lua zig 
-            mpv pqiv 
+            mpv pqiv libqalculate
             wf-recorder anki-bin
             #Applications
             obsidian discord virt-manager

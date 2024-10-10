@@ -23,5 +23,6 @@
         # system
         ./xdg
         ./packages
+        ./scripts
     ];
 }

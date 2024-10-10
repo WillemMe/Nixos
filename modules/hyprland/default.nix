@@ -27,6 +27,7 @@ in {
           pointerCursor.accent = "light";
         };
 
+
         gtk = {
           enable = true;
           catppuccin.enable = true;
