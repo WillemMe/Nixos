@@ -16,17 +16,35 @@
         kernelModules = [ "kvm-intel" ];
         extraModulePackages = [ ];
         tmp.cleanOnBoot = true;
-        loader = {
-            
+
+        plymouth = {
+            enable = true;
+            catppuccin.enable = true;
+        };
+        
+        consoleLogLevel = 0;
+        initrd.verbose = false;
+        kernelParams = [
+             "quiet"
+             "splash"
+             "boot.shell_on_fail"
+             "loglevel=0"
+             "rd.systemd.show_status=false"
+             "rd.udev.log_level=3"
+             "udev.log_priority=3"
+        ];
+
+        loader = {    
         #systemd-boot.enable = true;
         #systemd-boot.editor = false;
         #efi.canTouchEfiVariables = true;
         #timeout = 0;
-            grub = {
+        grub = {
              enable = true;
              enableCryptodisk = true;
              device = "/dev/vda";
              useOSProber = true;
+             catppuccin.enable = true;
              };
         };
     };

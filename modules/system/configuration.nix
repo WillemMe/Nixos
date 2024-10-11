@@ -19,6 +19,17 @@
 
     services.qemuGuest.enable = true;
     services.spice-vdagentd.enable = true;
+    services.gnome.gnome-keyring.enable = true;
+
+    services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+          command = ''${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd hyprland -r --asterisks --user-menu --theme border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red'';
+        user = "greeter";
+      };
+    };
+    };
 
     # Laptop-specific packages (the other ones are installed in `packages.nix`)
     environment.systemPackages = with pkgs; [
