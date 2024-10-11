@@ -82,12 +82,13 @@
     # Set up user and enable sudo
     users.users.willem = {
         isNormalUser = true;
-        extraGroups = [ "input" "wheel" ];
+        extraGroups = [ "input" "wheel" "networkmanager"];
         shell = pkgs.zsh;
     };
 
     # Set up networking and secure it
     networking = {
+        networkmanager.enable = true;
         wireless.iwd.enable = true;
         firewall = {
             enable = true;
@@ -129,19 +130,23 @@
         protectKernelImage = true;
     };
 
-    hardware.pulseaudio.enable = true;
+    #hardware.pulseaudio.enable = true;
     security.rtkit.enable = true;
 
     services.pipewire = {
-        enable = false;
+        enable = true;
         alsa.enable = true;
         alsa.support32Bit = true;
         pulse.enable = true;
+
     };
     
     # Disable bluetooth, enable pulseaudio, enable opengl (for Wayland)
     hardware = {
-        bluetooth.enable = false;
+        bluetooth = {
+            enable = true;
+            powerOnBoot = true;
+        };
        # opengl = {
        #     enable = true;
        #     driSupport = true;

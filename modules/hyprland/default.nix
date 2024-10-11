@@ -10,6 +10,7 @@ in {
           wl-clipboard hyprland
           hyprpaper hyprlock
           rofi-wayland kitty nautilus
+          networkmanagerapplet overskride
 	];
 
         home.file.".config/hypr/hyprland.conf".source = ./hyprland.conf;
