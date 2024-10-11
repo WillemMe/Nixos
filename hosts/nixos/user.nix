@@ -11,6 +11,7 @@
         hyprland.enable = true;
         rofi.enable = true;
         kitty.enable = true;
+        vscode.enable = true;
 
         # cli
         nvim.enable = true;

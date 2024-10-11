@@ -11,6 +11,7 @@
         ./hyprland
         ./rofi
         ./kitty
+        ./vscode
 
         # cli
         ./nvim
