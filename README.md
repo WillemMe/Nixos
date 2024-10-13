@@ -2,9 +2,6 @@
 
 *My configuration files for NixOS. Feel free to look around and copy!* 
 
-# Special thanks to:
-[https://github.com/notusknot/dotfiles-nix/]
-
 ## Info
 - Terminal emulator: kitty 
 - Window manager: :herb: Hyprland
@@ -92,7 +89,7 @@ Lastly, build the configuration with
 sudo nixos-rebuild switch --flake .#yourComputer
 ```
 
-And that should be it! If there are any issues please don't hesistate to [submit an issue](https://github.com/notusknot/dotfiles-nix/issues) or contact me.
+# Special thanks to:
+- (Notusknot dotfiles)[https://github.com/notusknot/dotfiles-nix/]
 
-## Conclusion
-And thats about it for my configuration. The code is registered under the MIT license, meaning you are allowed to use or distribute the code as you please, and if you need any help or have any suggestions, you can reach me on Discord at `notusknot#5622` or email me at `notusknot@pm.me`.
+
