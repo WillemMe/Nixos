@@ -3,26 +3,15 @@
 *My configuration files for NixOS. Feel free to look around and copy!* 
 
 # Special thanks to:
-- [Sioodmy's dotfiles](https://github.com/sioodmy/dotfiles)
-- [Syndrizzle's dotfiles](https://github.com/syndrizzle/hotfiles)
-- [Javacafe01's dotfiles](https://github.com/javacafe01/dotfiles)
-- [Siduck76's NvChad](https://github.com/siduck76/nvchad/)
-- [NixOS Manual](https://nixos.org/manual/nixos/stable/)
-- [Epsyle's NixOS Dotfiles](https://github.com/epsyle/snowflake/)
-
-![Screenshot of my desktop](https://github.com/notusknot/dotfiles-nix/blob/main/pics/screenshot.png)
-<video src="https://github.com/notusknot/dotfiles-nix/blob/main/pics/recording.mp4" width="100%"></video>
+[https://github.com/notusknot/dotfiles-nix/]
 
 ## Info
-- RAM usage on startup: ~180mb
-- Package count: :package: 582
-- Uses the [jabuti](https://github.com/jabuti-theme) theme
-- Terminal emulator: :foot: foot
+- Terminal emulator: kitty 
 - Window manager: :herb: Hyprland
 - Shell: :shell: zsh
 - Editor: :pencil: neovim
 - Browser: :fox_face: Firefox
-- Other: dunst, swaybg, eww, wofi
+- Other: dunst, hyprlock, hyprpaper, eww, rofi
 
 ## Commands to know
 - Rebuild and switch the system configuration (in the config directory):
@@ -32,11 +21,6 @@ rebuild
 OR
 ```
 doas nixos-rebuild switch --flake .#yourComputer --fast
-```
-
-- Connect to wifi (replace stuff within brackets with your info)
-```
-iwctl --passphrase [passphrase] station [device] connect [SSID]
 ```
 
 ## Installation
@@ -54,7 +38,7 @@ Prerequisites:
 Clone the repo and cd into it:
 
 ```bash
-git clone https://github.com/notusknot/dotfiles-nix ~/.config/nixos && cd ~/.config/nixos
+git clone https://github.com/WillemMe/Nixos ~/.config/nixos && cd ~/.config/nixos
 ```
 
 First, create a hardware configuration for your system:
