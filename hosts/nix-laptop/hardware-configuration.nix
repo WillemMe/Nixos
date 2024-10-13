@@ -52,20 +52,20 @@
       fsType = "btrfs";
     };
 
-  fileSystems."/home/willem/The Vault/Photos" =
-    { device = "//vault/Photos";
-      fsType = "cifs";
-    };
+#  fileSystems."/home/willem/The Vault/Photos" =
+#    { device = "//vault/Photos";
+#      fsType = "cifs";
+#    };
 
-  fileSystems."/home/willem/The Vault/Backup" =
-    { device = "//vault/Backup";
-      fsType = "cifs";
-    };
+#  fileSystems."/home/willem/The Vault/Backup" =
+#    { device = "//vault/Backup";
+#      fsType = "cifs";
+#    };
 
-  fileSystems."/home/willem/The Vault/Documents" =
-    { device = "//vault/Documents";
-      fsType = "cifs";
-    };
+#  fileSystems."/home/willem/The Vault/Documents" =
+#    { device = "//vault/Documents";
+#      fsType = "cifs";
+#    };
 
   swapDevices =
     [ { device = "/dev/vg1/swap"; }

@@ -1,9 +1,10 @@
 (defwidget bluetooth []
   (button
     :class "module-bt module icon"
-    :onclick "blueberry"
+    :onclick "overskride"
     :onrightclick "scripts/bluetooth toggle"
     :tooltip "${bluetooth.text} ${bluetooth.battery}"
     :style "color: ${bluetooth.color};"
+    :timeout: "1000ms"
     {bluetooth.icon}))
 

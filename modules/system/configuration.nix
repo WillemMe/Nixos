@@ -14,18 +14,19 @@
       };  
       hyprlock.enable = true;
       git.enable = true;
-      firefox.enable = true;
+      wireshark.enable = true;
     };
 
-    services.qemuGuest.enable = true;
-    services.spice-vdagentd.enable = true;
+    #services.qemuGuest.enable = true;
+    #services.spice-vdagentd.enable = true;
     services.gnome.gnome-keyring.enable = true;
+    services.automatic-timezoned.enable = true;
 
     services.greetd = {
     enable = true;
     settings = {
       default_session = {
-          command = ''${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd hyprland -r --asterisks --user-menu --theme border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red'';
+          command = ''${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland -r --asterisks --user-menu --theme border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red'';
         user = "greeter";
       };
     };
@@ -82,7 +83,7 @@
     # Set up user and enable sudo
     users.users.willem = {
         isNormalUser = true;
-        extraGroups = [ "input" "wheel" "networkmanager"];
+        extraGroups = [ "input" "wheel" "networkmanager" "wireshark"];
         shell = pkgs.zsh;
     };
 

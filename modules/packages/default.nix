@@ -17,9 +17,10 @@ in {
             mpv pqiv libqalculate
             wf-recorder anki-bin
             #Applications
-            obsidian discord virt-manager
+            obsidian virt-manager
+            vesktop # for discord screen share
             thunderbird nextcloud-client spotify
-            wireshark burpsuite
+            burpsuite wireshark
             #Libreoffice
             libreoffice hunspell
             hunspellDicts.nl_nl hunspellDicts.en_US

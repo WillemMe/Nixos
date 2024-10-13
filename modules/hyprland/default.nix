@@ -7,7 +7,7 @@ in {
     options.modules.hyprland= { enable = mkEnableOption "hyprland"; };
     config = mkIf cfg.enable {
 	home.packages = with pkgs; [
-          wl-clipboard hyprland
+          hyprland wl-clipboard
           hyprpaper hyprlock
           rofi-wayland kitty nautilus
           networkmanagerapplet overskride
@@ -21,7 +21,10 @@ in {
         home.file.".config/hypr/configs/exec.conf".source = ./configs/exec.conf;
         home.file.".config/hypr/configs/window.conf".source = ./configs/window.conf;
         home.file.".config/hypr/configs/binds.conf".source = ./configs/binds.conf;
-
+        home.file.".config/hypr/wallpapers" = {
+            source = ./wallpapers;
+            recursive = true;
+        };
        
         catppuccin = {
           pointerCursor.enable = true;
