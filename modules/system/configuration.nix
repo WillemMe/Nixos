@@ -21,7 +21,16 @@
     #services.spice-vdagentd.enable = true;
     services.gnome.gnome-keyring.enable = true;
     services.automatic-timezoned.enable = true;
+    services.actkbd.enable = true;
+    
+    ##Docker
+    virtualisation.docker = {
+        enable = true;
+        #enableNvidia = true;
+        storageDriver = "btrfs";
+    };
 
+   
     services.greetd = {
     enable = true;
     settings = {
@@ -73,7 +82,7 @@
 
 
     # Set up locales (timezone and keyboard layout)
-    time.timeZone = "America/Los_Angeles";
+    time.timeZone = "Europe/Amsterdam";
     i18n.defaultLocale = "en_US.UTF-8";
     console = {
         font = "Lat2-Terminus16";
@@ -83,7 +92,7 @@
     # Set up user and enable sudo
     users.users.willem = {
         isNormalUser = true;
-        extraGroups = [ "input" "wheel" "networkmanager" "wireshark"];
+        extraGroups = [ "input" "wheel" "networkmanager" "wireshark" "docker"];
         shell = pkgs.zsh;
     };
 
@@ -139,7 +148,6 @@
         alsa.enable = true;
         alsa.support32Bit = true;
         pulse.enable = true;
-
     };
     
     # Disable bluetooth, enable pulseaudio, enable opengl (for Wayland)

@@ -11,6 +11,8 @@ in {
           hyprpaper hyprlock
           rofi-wayland kitty nautilus
           networkmanagerapplet overskride
+          # Scripts
+          brillo light pamixer libcanberra-gtk3
 	];
 
         home.file.".config/hypr/hyprland.conf".source = ./hyprland.conf;
@@ -25,6 +27,12 @@ in {
             source = ./wallpapers;
             recursive = true;
         };
+        home.file.".config/hypr/scripts" = {
+            source = ./scripts;
+            recursive = true;
+        };
+        home.file.".config/hypr/face.png".source = ./face.png;
+
        
         catppuccin = {
           pointerCursor.enable = true;

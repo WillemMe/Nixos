@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+      [ (modulesPath + "/installer/scan/not-detected.nix")
+        ./hardware-optimizations.nix
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usbhid" "usb_storage" "aesni_intel" "cryptd" ];

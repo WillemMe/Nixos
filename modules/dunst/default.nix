@@ -14,7 +14,7 @@ in {
             enable = true;
             settings = {
                 global = {
-                    origin = "top-left";
+                    origin = "top-right";
                     offset = "60x12";
                     separator_height = 2;
                     padding = 12;
@@ -25,10 +25,9 @@ in {
                     idle_threshold = 120;
                     font = "JetBrainsMono Nerdfont 12";
                     line_height = 0;
-                    format = "<b>%s</b>\n%b";
+                    format = "<b>%s</b>";
                     alignment = "center";
                     icon_position = "off";
-                    startup_notification = "false";
                     corner_radius = 12;
 
                     frame_color = "#44465c";
