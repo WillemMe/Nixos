@@ -20,6 +20,7 @@
         gpg.enable = false;
         direnv.enable = true;
         joshuto.enable = true;
+        hacking.enable = true;
 
         # system
         xdg.enable = true;

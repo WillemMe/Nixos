@@ -2,12 +2,22 @@
 # and may be overwritten by future invocations.  Please make changes
 # to /etc/nixos/configuration.nix instead.
 { config, lib, pkgs, modulesPath, ... }:
+let
+    automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s,workgroup=workgroup,uid=willem,gid=users";
 
+    createFileSystem = name: path: {
+    device = path;
+    fsType = "cifs";
+    options = ["${automount_opts},credentials=/etc/nixos/smb-creds"];
+    };
+in
 {
   imports =
       [ (modulesPath + "/installer/scan/not-detected.nix")
         ./hardware-optimizations.nix
     ];
+  
+  environment.systemPackages = [ pkgs.cifs-utils ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usbhid" "usb_storage" "aesni_intel" "cryptd" ];
   boot.initrd.kernelModules = [ "dm-snapshot" ];
@@ -52,6 +62,10 @@
     { device = "/dev/vg2/home";
       fsType = "btrfs";
     };
+  fileSystems."/home/willem/The Vault/Photos" = createFileSystem "Photos" "//vault/Photos";
+  fileSystems."/home/willem/The Vault/Documents" = createFileSystem "Documents" "//vault/Documents";
+  fileSystems."/home/willem/The Vault/Backup" = createFileSystem "Backup" "//vault/Backup";
+
 
 #  fileSystems."/home/willem/The Vault/Photos" =
 #    { device = "//vault/Photos";

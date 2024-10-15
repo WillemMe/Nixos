@@ -20,6 +20,7 @@
         ./gpg
         ./direnv
         ./joshuto
+        ./hacking
 
         # system
         ./xdg
