@@ -7,13 +7,18 @@ in {
     options.modules.zsh = { enable = mkEnableOption "zsh"; };
 
     config = mkIf cfg.enable {
-    	home.packages = [
-	    pkgs.zsh
+    	home.packages = with pkgs; [
+          libnotify            # dependecy for notify-send
+          zoxide               # the better cd
+          fzf                  # zoxide dependecy
+          nix-output-monitor   # colorful nix build outputs
+          eza                  # better ls
+          bat                  # better cat
           ];
-                  
-        
-
-
+        programs.zoxide = {
+          enable = true;
+          options = ["--cmd cd"];
+        };
         programs.zsh = {
             enable = true;
 
@@ -29,10 +34,9 @@ in {
                 PROMPT="%F{blue}%m %~%b "$'\n'"%(?.%F{green}%Bλ%b |.%F{red}?) %f"
 
                 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store";
-                export ZK_NOTEBOOK_DIR="~/stuff/notes";
-                export DIRENV_LOG_FORMAT="";
                 bindkey '^ ' autosuggest-accept
-
+                bindkey '^R' history-incremental-search-backward
+                
                 edir() { tar -cz $1 | age -p > $1.tar.gz.age && rm -rf $1 &>/dev/null && echo "$1 encrypted" }
                 ddir() { age -d $1 | tar -xz && rm -rf $1 &>/dev/null && echo "$1 decrypted" }
             '';
@@ -41,9 +45,6 @@ in {
             # `cd ~dots` will cd into ~/.config/nixos
             dirHashes = {
                 dots = "$HOME/.config/nixos";
-                stuff = "$HOME/stuff";
-                media = "/run/media/$USER";
-                junk = "$HOME/stuff/other";
             };
 
             # Tweak settings for history
@@ -64,23 +65,13 @@ in {
                 ls = "exa -a --icons";
                 tree = "exa --tree --icons";
                 #Devops
+                g = "git";
                 nd = "nix develop -c $SHELL";
-                rebuild = "sudo nixos-rebuild switch --flake $NIXOS_CONFIG_DIR --fast; notify-send 'Rebuild complete\!'";
+                switch = "sudo nixos-rebuild switch --flake ~/dotfiles --fast";
+                rebuild = "switch;  notify-send -a NixOS 'Rebuild complete\!'";
+                update = "sudo nix flake update --commit-lock-file -I ~/dotfiles; switch; notify-send -a NixOS 'System updated\!'";
                 #Programs
               };
-
-            # Source all plugins, nix-style
-            plugins = [
-            {
-                name = "auto-ls";
-                src = pkgs.fetchFromGitHub {
-                    owner = "notusknot";
-                    repo = "auto-ls";
-                    rev = "62a176120b9deb81a8efec992d8d6ed99c2bd1a1";
-                    sha256 = "08wgs3sj7hy30x03m8j6lxns8r2kpjahb9wr0s0zyzrmr4xwccj0";
-                };
-            }
-        ];
     };
 };
 }

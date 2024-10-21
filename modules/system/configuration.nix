@@ -21,7 +21,6 @@
     #services.qemuGuest.enable = true;
     #services.spice-vdagentd.enable = true;
     services.gnome.gnome-keyring.enable = true;
-    services.actkbd.enable = true;
     
     ##Docker
     virtualisation.docker = {
@@ -111,11 +110,11 @@
             allowedUDPPorts = [ 443 80 44857 ];
             allowPing = false;
         };
-        #extraHosts =
-        #    ''
-        #        10.10.0.111 vault
-        #        127.0.0.1   lo
-        #    '';
+        extraHosts =
+            ''
+                10.10.0.111 vault
+                127.0.0.1   lo
+            '';
     };
 
     # Set environment variables
