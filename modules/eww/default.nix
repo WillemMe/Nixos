@@ -31,20 +31,20 @@ in {
    home.file.".config/eww/scripts".source = ./scripts;
    home.file.".config/eww/windows".source = ./windows;
 
-   systemd.user.services.eww = {
-     Unit = {
-       Description = "Eww bar";
-       After = [ "graphical-session.target" ];
-     };
-     Service = {
-       ExecStart = "${config.home.homeDirectory}/.config/eww/launch";
-       Restart = "always";
-       RestartSec = 5;
-     };
-     Install = {
-       WantedBy = [ "default.target" ];
-     };
-   };
+  # systemd.user.services.eww = {
+  #   Unit = {
+  #     Description = "Eww bar";
+  #     After = [ "graphical-session.target" ];
+  #   };
+  #   Service = {
+  #     ExecStart = "${eww}/launch";
+  #     Restart = "always";
+  #     RestartSec = 5;
+  #   };
+  #   Install = {
+  #     WantedBy = [ "default.target" ];
+  #   };
+  # };
 
    home.sessionVariables = {
      EWW_CONFIG_DIR = "${config.home.homeDirectory}/.config/eww";

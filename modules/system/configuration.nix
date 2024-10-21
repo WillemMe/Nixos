@@ -15,12 +15,12 @@
       hyprlock.enable = true;
       git.enable = true;
       wireshark.enable = true;
+      nm-applet.enable = true;
     };
 
     #services.qemuGuest.enable = true;
     #services.spice-vdagentd.enable = true;
     services.gnome.gnome-keyring.enable = true;
-    services.automatic-timezoned.enable = true;
     services.actkbd.enable = true;
     
     ##Docker
@@ -98,19 +98,24 @@
 
     # Set up networking and secure it
     networking = {
-        networkmanager.enable = true;
+        networkmanager = {
+            enable = true;
+            logLevel = "DEBUG";
+            wifi.backend = "iwd";
+        };
         wireless.iwd.enable = true;
+        wireless.dbusControlled = true;
         firewall = {
             enable = true;
             allowedTCPPorts = [ 443 80 ];
             allowedUDPPorts = [ 443 80 44857 ];
             allowPing = false;
         };
-        extraHosts =
-            ''
-                10.10.0.111 vault
-                127.0.0.1   lo
-            '';
+        #extraHosts =
+        #    ''
+        #        10.10.0.111 vault
+        #        127.0.0.1   lo
+        #    '';
     };
 
     # Set environment variables
