@@ -14,6 +14,8 @@ in {
           nix-output-monitor   # colorful nix build outputs
           eza                  # better ls
           bat                  # better cat
+          trashy
+          expect
           ];
         programs.zoxide = {
           enable = true;
@@ -67,9 +69,9 @@ in {
                 #Devops
                 g = "git";
                 nd = "nix develop -c $SHELL";
-                switch = "sudo nixos-rebuild switch --flake ~/dotfiles --fast";
-                rebuild = "switch;  notify-send -a NixOS 'Rebuild complete\!'";
-                update = "sudo nix flake update --commit-lock-file -I ~/dotfiles; switch; notify-send -a NixOS 'System updated\!'";
+                switch = "sudo nixos-rebuild switch --flake ~dots --fast";
+                rebuild = "sudo -v && sudo nixos-rebuild switch --flake ~dots --fast --log-format internal-json -v |& nom --json &&  notify-send -a NixOS 'Rebuild complete\!'";
+                update = "sudo nix flake update --commit-lock-file -I ~dots; switch; notify-send -a NixOS 'System updated\!'";
                 #Programs
               };
     };

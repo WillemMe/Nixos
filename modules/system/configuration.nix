@@ -5,6 +5,13 @@
     environment.defaultPackages = [ ];
     services.xserver.desktopManager.xterm.enable = false;
     nixpkgs.config.allowUnfree = true;
+    
+     # Laptop-specific packages (the other ones are installed in `packages.nix`)
+    environment.systemPackages = with pkgs; [
+        acpi tlp git kitty
+    ] ++ [
+    inputs.zen-browser.packages.${system}.specific
+    ];
 
     programs = {
       zsh.enable = true;
@@ -39,12 +46,6 @@
       };
     };
     };
-
-    # Laptop-specific packages (the other ones are installed in `packages.nix`)
-    environment.systemPackages = with pkgs; [
-        acpi tlp git kitty
-    ];
-
 
     # Install fonts
     fonts = {
