@@ -13,7 +13,8 @@ in {
           networkmanagerapplet overskride
           # Scripts
           brillo light pamixer libcanberra-gtk3
-          swappy
+          swappy playerctl
+          gnomeExtensions.appindicator
 	];
 
         home.file.".config/hypr/hyprland.conf".source = ./hyprland.conf;

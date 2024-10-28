@@ -23,6 +23,7 @@
       git.enable = true;
       wireshark.enable = true;
       nm-applet.enable = true;
+      virt-manager.enable = true;
     };
 
     #services.qemuGuest.enable = true;
@@ -34,6 +35,26 @@
         enable = true;
         #enableNvidia = true;
         storageDriver = "btrfs";
+    };
+
+    virtualisation.libvirtd = {
+      enable = true;
+      qemu = {
+        package = pkgs.qemu_kvm;
+        vhostUserPackages = [ pkgs.virtiofsd ];
+        runAsRoot = true;
+        swtpm.enable = true;
+        ovmf = {
+          enable = true;
+          packages = [(pkgs.OVMF.override {
+            secureBoot = true;
+            tpmSupport = true;
+          }).fd];
+        };
+      };  
+    };
+    programs.dconf = {
+        enable = true; # virt-manager requires dconf to remember settings
     };
 
    
@@ -92,7 +113,7 @@
     # Set up user and enable sudo
     users.users.willem = {
         isNormalUser = true;
-        extraGroups = [ "input" "wheel" "networkmanager" "wireshark" "docker"];
+        extraGroups = [ "input" "wheel" "networkmanager" "wireshark" "docker" "libvirtd"];
         shell = pkgs.zsh;
     };
 
