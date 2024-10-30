@@ -69,6 +69,7 @@
                 #                                Architecture   Hostname
                 desktop = mkSystem inputs.nixpkgs "x86_64-linux" "desktop";
 
+                nix-desktop = mkSystem inputs.nixpkgs "x86_64-linux" "nix-desktop";
                 nix-laptop = mkSystem inputs.nixpkgs "x86_64-linux" "nix-laptop";
             };
     };

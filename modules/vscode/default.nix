@@ -9,8 +9,8 @@ in {
         programs.vscode = {
             enable = true;
             extensions = with pkgs; [
-                vscode-extensions.github.copilot
-                vscode-extensions.github.copilot-chat 
+               # vscode-extensions.github.copilot
+               # vscode-extensions.github.copilot-chat 
                 vscode-extensions.ms-vsliveshare.vsliveshare
                 vscode-extensions.bradlc.vscode-tailwindcss
                 vscode-extensions.james-yu.latex-workshop

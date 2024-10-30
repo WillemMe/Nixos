@@ -23,6 +23,12 @@
       git.enable = true;
       wireshark.enable = true;
       nm-applet.enable = true;
+      steam = {
+          enable = true;
+          remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+          dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+          localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+      };
     };
 
     #services.qemuGuest.enable = true;
@@ -32,8 +38,7 @@
     ##Docker
     virtualisation.docker = {
         enable = true;
-        #enableNvidia = true;
-        storageDriver = "btrfs";
+        #storageDriver = "btrfs";
     };
 
    

@@ -24,6 +24,7 @@ in {
             #Libreoffice
             libreoffice hunspell
             hunspellDicts.nl_nl hunspellDicts.en_US
+            neofetch mission-center
         ];
     };
 }
