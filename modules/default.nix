@@ -22,6 +22,7 @@
         ./direnv
         ./joshuto
         ./hacking
+        ./qemu
 
         # system
         ./xdg

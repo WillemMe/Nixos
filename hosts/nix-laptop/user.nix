@@ -21,6 +21,7 @@
         direnv.enable = true;
         joshuto.enable = true;
         hacking.enable = true;
+        qemu.enable = true;
 
         # system
         xdg.enable = true;
