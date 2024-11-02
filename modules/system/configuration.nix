@@ -122,9 +122,7 @@
         networkmanager = {
             enable = true;
             logLevel = "DEBUG";
-            wifi.backend = "iwd";
         };
-        wireless.iwd.enable = true;
         wireless.dbusControlled = true;
         firewall = {
             enable = true;
