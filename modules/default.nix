@@ -12,6 +12,7 @@
         ./rofi
         ./kitty
         ./vscode
+        ./gaming
 
         # cli
         ./nvim

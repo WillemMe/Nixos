@@ -13,7 +13,7 @@ in {
           networkmanagerapplet overskride
           # Scripts
           brillo light pamixer libcanberra-gtk3
-          swappy playerctl
+          swappy playerctl pavucontrol
           gnomeExtensions.appindicator
 	];
 
