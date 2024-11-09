@@ -1,5 +1,5 @@
 { config, lib, inputs, ...}:
-
+#Home Manager
 {
     imports = [ ../../modules/default.nix ];
     config.modules = {

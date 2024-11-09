@@ -11,11 +11,13 @@ in {
             eza htop fzf
             pass gnupg bat
             unzip lowdown zk
+            usbutils
             grim slurp slop
             imagemagick age libnotify
-            git python3 lua zig 
+            git python3 lua zig file 
             mpv pqiv libqalculate
-            wf-recorder anki-bin
+           #wf-recorder 
+            anki-bin
             #Applications
             obsidian virt-manager
             vesktop # for discord screen share
@@ -25,6 +27,10 @@ in {
             libreoffice hunspell
             hunspellDicts.nl_nl hunspellDicts.en_US
             neofetch mission-center
+            arduino-ide
+
+            #Hacking tools
+            proxychains
         ];
     };
 }
