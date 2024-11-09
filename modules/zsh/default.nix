@@ -73,6 +73,7 @@ in {
                 switch = "sudo nixos-rebuild switch --flake ~dots --fast";
                 rebuild = "sudo -v && sudo nixos-rebuild switch --flake ~dots --fast --log-format internal-json -v |& nom --json &&  notify-send -a NixOS 'Rebuild complete\!'";
                 update = "sudo nix flake update --commit-lock-file -I ~dots; switch; notify-send -a NixOS 'System updated\!'";
+                nix-shell ="nix-shell --run zsh";
                 #Programs
               };
     };

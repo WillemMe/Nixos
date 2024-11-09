@@ -30,6 +30,10 @@
                         { networking.hostName = hostname; }
                         # General configuration (users, networking, sound, etc)
                         ./modules/system/configuration.nix
+
+                        # User space hardware specific services
+                        (./. + "/hosts/${hostname}/user-configuration.nix")
+
                         # Hardware config (bootloader, kernel modules, filesystems, etc)
                         # DO NOT USE MY HARDWARE CONFIG!! USE YOUR OWN!!
                         (./. + "/hosts/${hostname}/hardware-configuration.nix")

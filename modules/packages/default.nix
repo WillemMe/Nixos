@@ -11,11 +11,13 @@ in {
             eza htop fzf
             pass gnupg bat
             unzip lowdown zk
+            usbutils
             grim slurp slop
             imagemagick age libnotify
-            git python3 lua zig 
+            git python3 lua zig file 
             mpv pqiv libqalculate
-            wf-recorder anki-bin
+            #wf-recorder
+            anki-bin
             usbutils
             #Applications
             obsidian virt-manager
@@ -29,6 +31,10 @@ in {
             #Tools
             rtl-sdr-blog airspy sdrpp multimon-ng
             flac
+            arduino-ide
+
+            #Hacking tools
+            proxychains
         ];
     };
 }

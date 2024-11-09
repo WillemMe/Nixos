@@ -13,23 +13,31 @@
     inputs.zen-browser.packages.${system}.specific
     ];
 
+
     programs = {
       zsh.enable = true;
       hyprland = {
         enable = true;
         xwayland.enable = true;
       };  
+      nix-ld.enable = true;
       hyprlock.enable = true;
       git.enable = true;
       wireshark.enable = true;
       nm-applet.enable = true;
-      steam = {
-          enable = true;
-          remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-          dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-          localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-      };
       virt-manager.enable = true;
+      proxychains = {
+        enable = true;
+        quietMode = true;
+        proxies = {
+        local = {
+          enable = true;
+          type = "socks5";
+          host = "127.0.0.1";
+          port = 1080;
+         };
+        };
+      };
     };
 
     hardware.rtl-sdr.enable = true;
@@ -66,7 +74,10 @@
     programs.dconf = {
         enable = true; # virt-manager requires dconf to remember settings
     };
-
+    
+    services.udev = {
+        packages = with pkgs; [ platformio-core openocd teensy-udev-rules];
+   };
    
     services.greetd = {
     enable = true;
@@ -132,12 +143,11 @@
         networkmanager = {
             enable = true;
             logLevel = "DEBUG";
-            wifi.backend = "iwd";
+            #unmanaged = [ "interface-name:wlp0s20f0u1" ];
         };
-        wireless.iwd.enable = true;
         wireless.dbusControlled = true;
         firewall = {
-            enable = true;
+            enable = false;
             allowedTCPPorts = [ 443 80 ];
             allowedUDPPorts = [ 443 80 44857 ];
             allowPing = false;
