@@ -32,6 +32,10 @@
       virt-manager.enable = true;
     };
 
+    hardware.rtl-sdr.enable = true;
+    boot.blacklistedKernelModules = [ "dvb_usb_rtl28xxu" ];
+    services.udev.packages = [ pkgs.rtl-sdr ];
+
     #services.qemuGuest.enable = true;
     #services.spice-vdagentd.enable = true;
     services.gnome.gnome-keyring.enable = true;
@@ -41,6 +45,7 @@
         enable = true;
         #storageDriver = "btrfs";
     };
+    hardware.nvidia-container-toolkit.enable = true;
 
     virtualisation.libvirtd = {
       enable = true;
@@ -118,7 +123,7 @@
     # Set up user and enable sudo
     users.users.willem = {
         isNormalUser = true;
-        extraGroups = [ "input" "wheel" "networkmanager" "wireshark" "docker" "libvirtd"];
+        extraGroups = [ "input" "wheel" "networkmanager" "plugdev" "wireshark" "docker" "libvirtd"];
         shell = pkgs.zsh;
     };
 
