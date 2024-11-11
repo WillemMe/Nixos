@@ -16,8 +16,9 @@ in {
             imagemagick age libnotify
             git python3 lua zig file 
             mpv pqiv libqalculate
-           #wf-recorder 
+            #wf-recorder
             anki-bin
+            usbutils
             #Applications
             obsidian virt-manager
             vesktop # for discord screen share
@@ -27,6 +28,9 @@ in {
             libreoffice hunspell
             hunspellDicts.nl_nl hunspellDicts.en_US
             neofetch mission-center
+            #Tools
+            rtl-sdr-blog airspy sdrpp multimon-ng
+            flac
             arduino-ide
 
             #Hacking tools
