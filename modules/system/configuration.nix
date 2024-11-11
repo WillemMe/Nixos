@@ -42,7 +42,7 @@
 
     hardware.rtl-sdr.enable = true;
     boot.blacklistedKernelModules = [ "dvb_usb_rtl28xxu" ];
-    services.udev.packages = [ pkgs.rtl-sdr ];
+    #services.udev.packages = [ pkgs.rtl-sdr ];
 
     #services.qemuGuest.enable = true;
     #services.spice-vdagentd.enable = true;
