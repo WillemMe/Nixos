@@ -15,16 +15,16 @@
   boot.extraModulePackages = [ ];
 
  
-  boot.initrd.luks.devices = {
-      "luks-78aa9120-4494-4608-9554-0011d0596ed0" = {
-          device = "/dev/disk/by-uuid/78aa9120-4494-4608-9554-0011d0596ed0";
-          allowDiscards = true;
-      };
-      "luks-abb44ccb-c7a5-44fc-968d-a2c1a676f0a7" = {
-          device = "/dev/disk/by-uuid/abb44ccb-c7a5-44fc-968d-a2c1a676f0a7";
-          allowDiscards = true;
-      };
-  };
+  #boot.initrd.luks.devices = {
+  #    "luks-78aa9120-4494-4608-9554-0011d0596ed0" = {
+  #        device = "/dev/disk/by-uuid/78aa9120-4494-4608-9554-0011d0596ed0";
+  #        allowDiscards = true;
+  #    };
+  #    "luks-abb44ccb-c7a5-44fc-968d-a2c1a676f0a7" = {
+  #        device = "/dev/disk/by-uuid/abb44ccb-c7a5-44fc-968d-a2c1a676f0a7";
+  #        allowDiscards = true;
+  #    };
+  #};
 # Bootloader.
   boot.loader.systemd-boot.enable = false;
 
@@ -37,19 +37,19 @@
     device = "nodev";
  };
     fileSystems."/" =
-    { device = "/dev/disk/by-uuid/417b60fe-9ed2-489c-811b-026848809343";
+    { device = "/dev/nvme0n1p2";
       fsType = "ext4";
   };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/AC1C-191D";
+    { device = "/dev/nvme0n1p1";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
   swapDevices =
       [ { 
-          device = "/dev/disk/by-uuid/2a473ecd-203d-4dc7-893a-5d9598675b65";
+          device = "/dev/nvme0n1p3";
         }
     ];
 
