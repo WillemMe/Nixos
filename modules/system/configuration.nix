@@ -44,9 +44,9 @@
     #services.spice-vdagentd.enable = true;
     services.gnome.gnome-keyring.enable = true;
     
-
+    virtualisation.spiceUSBRedirection.enable = true;
     virtualisation.libvirtd = {
-      enable = true;
+        enable = true;  
       qemu = {
         package = pkgs.qemu_kvm;
         vhostUserPackages = [ pkgs.virtiofsd ];
