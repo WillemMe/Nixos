@@ -62,9 +62,9 @@ in
     { device = "/dev/vg2/home";
       fsType = "btrfs";
     };
-  fileSystems."/home/willem/The Vault/Photos" = createFileSystem "Photos" "//vault/Photos";
-  fileSystems."/home/willem/The Vault/Documents" = createFileSystem "Documents" "//vault/Documents";
-  fileSystems."/home/willem/The Vault/Backup" = createFileSystem "Backup" "//vault/Backup";
+  #fileSystems."/home/willem/The Vault/Photos" = createFileSystem "Photos" "//vault/Photos";
+  #fileSystems."/home/willem/The Vault/Documents" = createFileSystem "Documents" "//vault/Documents";
+  #fileSystems."/home/willem/The Vault/Backup" = createFileSystem "Backup" "//vault/Backup";
 
 
 #  fileSystems."/home/willem/The Vault/Photos" =

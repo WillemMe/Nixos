@@ -27,7 +27,7 @@ in {
             #Libreoffice
             libreoffice hunspell
             hunspellDicts.nl_nl hunspellDicts.en_US
-            neofetch mission-center
+            neofetch #mission-center
             #Tools
             rtl-sdr-blog airspy sdrpp multimon-ng
             flac

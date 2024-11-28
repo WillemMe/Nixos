@@ -135,7 +135,7 @@
     # Set up user and enable sudo
     users.users.willem = {
         isNormalUser = true;
-        extraGroups = [ "input" "wheel" "networkmanager" "plugdev" "wireshark" "docker" "libvirtd"];
+        extraGroups = [ "input" "wheel" "networkmanager" "plugdev" "wireshark" "docker" "libvirtd" "video" "dialout"];
         shell = pkgs.zsh;
     };
 
@@ -156,7 +156,9 @@
         extraHosts =
             ''
                 10.10.0.111 vault
+                10.20.0.101 pc
                 127.0.0.1   lo
+                127.0.0.1   lo.dorp.me
             '';
     };
 
@@ -174,6 +176,8 @@
         DIRENV_LOG_FORMAT = "";
         ANKI_WAYLAND = "1";
         DISABLE_QT5_COMPAT = "0";
+        GSK_RENDERER= "ngl";
+        NIXPKGS_ALLOW_UNFREE="1";
     };
 
     # Security 
