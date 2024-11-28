@@ -52,7 +52,6 @@
     ##Docker
     virtualisation.docker = {
         enable = true;
-        #storageDriver = "btrfs";
     };
     hardware.nvidia-container-toolkit.enable = true;
 
@@ -143,8 +142,7 @@
     networking = {
         networkmanager = {
             enable = true;
-            logLevel = "DEBUG";
-            #unmanaged = [ "interface-name:wlp0s20f0u1" ];
+            #logLevel = "DEBUG";
         };
         wireless.dbusControlled = true;
         firewall = {
