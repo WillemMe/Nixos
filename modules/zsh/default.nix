@@ -14,7 +14,7 @@ in {
           nix-output-monitor   # colorful nix build outputs
           eza                  # better ls
           bat                  # better cat
-          trashy
+          #trashy
           expect
           ];
         programs.zoxide = {
@@ -60,7 +60,7 @@ in {
             shellAliases = {
                 c = "clear";
                 mkdir = "mkdir -vp";
-                rm = "trash";
+                #rm = "trash";
                 rmr = "trash list | fzf --multi | awk '{$1=$1;print}' | rev | cut -d ' ' -f1 | rev | xargs trash restore --match=exact --force";
                 mv = "mv -iv";
                 cp = "cp -riv";

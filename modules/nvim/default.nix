@@ -19,7 +19,7 @@ in {
         home.file.".config/nvim/settings.lua".source = ./init.lua;
         
         home.packages = with pkgs; [
-            sumneko-lua-language-server stylua # Lua
+            luajitPackages.lua-lsp stylua # Lua
         ];
 
         programs.zsh = {
@@ -61,7 +61,6 @@ in {
                     config = ''
                         lua << EOF
                         require('lspconfig').rust_analyzer.setup{}
-                        require('lspconfig').sumneko_lua.setup{}
                         require('lspconfig').rnix.setup{}
                         require('lspconfig').zk.setup{}
                         EOF
