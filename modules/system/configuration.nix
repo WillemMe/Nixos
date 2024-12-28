@@ -210,10 +210,9 @@
             enable = true;
             powerOnBoot = true;
         };
-       # opengl = {
-       #     enable = true;
-       #     driSupport = true;
-       # };
+        opengl = {
+            enable = true;
+        };
     };
 
     # Do not touch

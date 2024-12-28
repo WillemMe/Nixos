@@ -15,7 +15,9 @@ in {
             grim slurp slop
             imagemagick age libnotify
             git python3 lua zig file 
-            mpv pqiv libqalculate
+            mpv pqiv libheif gthumb loupe
+            gnome-icon-theme
+            libqalculate
             #wf-recorder
             anki-bin
             usbutils
@@ -28,6 +30,7 @@ in {
             libreoffice hunspell
             hunspellDicts.nl_nl hunspellDicts.en_US
             neofetch #mission-center
+            texliveFull
             #Tools
             rtl-sdr-blog airspy sdrpp multimon-ng
             flac
