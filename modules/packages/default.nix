@@ -25,7 +25,7 @@ in {
             obsidian virt-manager
             vesktop # for discord screen share
             thunderbird nextcloud-client spotify
-            burpsuite wireshark wireguard-tools rustdesk
+            burpsuite wireshark wireguard-tools 
             #Libreoffice
             libreoffice hunspell
             hunspellDicts.nl_nl hunspellDicts.en_US
