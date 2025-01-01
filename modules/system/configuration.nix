@@ -213,11 +213,10 @@
             enable = true;
             powerOnBoot = true;
         };
+        opengl = {
+            enable = true;
+        };
         brillo.enable = true; #allow users to change brightness
-       # opengl = {
-       #     enable = true;
-       #     driSupport = true;
-       # };
     };
 
     # Do not touch
