@@ -16,7 +16,7 @@ in {
             imagemagick age libnotify
             git python3 lua zig file 
             mpv pqiv libqalculate
-            feh
+            feh hexedit wget
             #wf-recorder
             anki-bin
             usbutils
