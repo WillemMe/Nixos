@@ -1,0 +1,1 @@
+(defpoll interfaceId :interval "60s" "route | grep default | head -n1 | awk '{print $8}'")

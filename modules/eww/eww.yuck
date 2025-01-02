@@ -10,6 +10,10 @@
 (include "./modules/launcher.yuck")
 (include "./modules/network.yuck")
 
+(include "./pollers.yuck")
+
+
+
 (include "./windows/calendar.yuck")
 (include "./windows/music.yuck")
 (include "./windows/osd.yuck")
