@@ -11,6 +11,7 @@ in {
           hyprpaper hyprlock
           rofi-wayland kitty nautilus
           networkmanagerapplet overskride
+          hyprpicker
           # Scripts
           brillo light pamixer libcanberra-gtk3
           swappy playerctl pavucontrol

@@ -8,6 +8,7 @@
 (include "./modules/volume.yuck")
 (include "./modules/workspaces.yuck")
 (include "./modules/launcher.yuck")
+(include "./modules/network.yuck")
 
 (include "./windows/calendar.yuck")
 (include "./windows/music.yuck")
@@ -26,11 +27,13 @@
   (box
     :space-evenly false
     :halign "end"
+    (systray :class "tray" :pack-direction "rtl" :icon-size "20")
+    (label :class "seperator" :text "|")
     (bright)
     (volume-module)
     (bluetooth)
-    (systray :class "tray" :pack-direction "rtl" :icon-size "20")
-
+    (label :class "seperator" :text "|")
+    (network)
     (label :class "seperator" :text "|")
     (sys)
     (label :class "seperator" :text "|")

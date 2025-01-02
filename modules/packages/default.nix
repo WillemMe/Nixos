@@ -8,7 +8,7 @@ in {
     config = mkIf cfg.enable {
         home.packages = with pkgs; [
             ripgrep ffmpeg tealdeer
-            eza htop fzf
+            eza htop fzf cargo rustc
             pass gnupg bat
             unzip lowdown zk
             usbutils
@@ -21,15 +21,18 @@ in {
             #wf-recorder
             anki-bin
             usbutils
+            
             #Applications
             obsidian virt-manager
             vesktop # for discord screen share
             thunderbird nextcloud-client spotify
-            burpsuite wireshark wireguard-tools 
-            #Libreoffice
+            burpsuite wireshark wireguard-tools  
+            neofetch mission-center
+
+            #Office
             libreoffice hunspell
             hunspellDicts.nl_nl hunspellDicts.en_US
-            neofetch #mission-center
+            
             texliveFull
             #Tools
             rtl-sdr-blog airspy sdrpp multimon-ng

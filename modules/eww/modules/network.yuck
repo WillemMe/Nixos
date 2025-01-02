@@ -1,0 +1,13 @@
+(defwidget network []
+    (box :orientation "h" :space-evenly false (label :text "${interfaceId}: ${round(EWW_NET[interfaceId].NET_UP / 1000000, 2)}")
+      (label :class {round(EWW_NET[interfaceId].NET_UP / 1000000, 2) > 0.1 ?
+        round(EWW_NET[interfaceId].NET_UP / 1000000, 2) > 5 ?
+        "veryuplink" : "uplink" : "noactive"} :text "  "
+      )
+      (label :text "${round(EWW_NET[interfaceId].NET_DOWN / 1000000, 2)}")
+      (label :class {round(EWW_NET[interfaceId].NET_DOWN / 1000000, 2) > 0.1 ?
+        round(EWW_NET[interfaceId].NET_DOWN / 1000000, 2) > 10 ?
+        "verydownlink" : "downlink" : "noactive"} :text "  "
+      )
+    )
+  )

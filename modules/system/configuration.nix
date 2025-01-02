@@ -42,10 +42,7 @@
 
     hardware.rtl-sdr.enable = true;
     boot.blacklistedKernelModules = [ "dvb_usb_rtl28xxu" ];
-    #services.udev.packages = [ pkgs.rtl-sdr ];
 
-    #services.qemuGuest.enable = true;
-    #services.spice-vdagentd.enable = true;
     services.gnome.gnome-keyring.enable = true;
     
     virtualisation.spiceUSBRedirection.enable = true;
@@ -53,7 +50,6 @@
     virtualisation.docker = {
         enable = true;
     };
-    hardware.nvidia-container-toolkit.enable = true;
 
     virtualisation.libvirtd = {
         enable = true;  
@@ -213,8 +209,11 @@
             enable = true;
             powerOnBoot = true;
         };
-        opengl = {
+        graphics = {
             enable = true;
+            extraPackages = with pkgs; [
+                mesa libGL glibc
+            ];
         };
         brillo.enable = true; #allow users to change brightness
     };
