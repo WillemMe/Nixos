@@ -22,6 +22,7 @@ in {
    # Managing individual files
    home.file.".config/eww/eww.scss".source = ./eww.scss;
    home.file.".config/eww/eww.yuck".source = ./eww.yuck;
+    home.file.".config/eww/pollers.yuck".source = ./pollers.yuck;
    home.file.".config/eww/launch".source = ./launch;
 
    # Managing directories: assets, css, dashboard, modules, scripts, windows

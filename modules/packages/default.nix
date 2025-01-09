@@ -9,7 +9,7 @@ in {
         home.packages = with pkgs; [
             ripgrep ffmpeg tealdeer
             eza htop fzf cargo rustc
-            pass gnupg bat
+            pass gnupg bat ntfs3g
             unzip lowdown zk
             usbutils
             grim slurp slop
