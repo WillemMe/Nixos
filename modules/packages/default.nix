@@ -18,6 +18,7 @@ in {
             mpv pqiv libheif gthumb loupe
             gnome-icon-theme
             libqalculate
+            feh hexedit wget
             #wf-recorder
             anki-bin
             usbutils
