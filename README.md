@@ -33,11 +33,11 @@ Each host only sets which `system-modules` are enabled plus its own hardware
 config.
 
 | Host      | Role     | Notable modules enabled              |
-| --------- | -------- | ------------------------------------- |
-| `example` | Template | hyprland, noctalia(-greeter), docker  |
+| --------- | -------- | ------------------------------------ |
+| `example` | Template | hyprland, noctalia(-greeter), docker |
 
-Copy `hosts/example` as a starting point for your own host(s) — see
-"Adding a new host" below.
+Copy `hosts/example` as a starting point for your own host(s) — see "Adding a
+new host" below.
 
 ## System modules
 
@@ -119,3 +119,9 @@ sudo nixos-rebuild switch --flake .#my-host
 ```bash
 sudo nixos-rebuild switch --flake .#<hostname>
 ```
+
+## Credits
+
+Special thanks to Notusknot for dotfile outline:
+
+- [Notusknot dotfiles](https://github.com/notusknot/dotfiles-nix/)
